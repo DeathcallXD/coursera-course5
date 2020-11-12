@@ -1,0 +1,15 @@
+<div class="loader">
+  <div ng-if="dirCtrl.isFound()">
+    <ul>
+      <li ng-repeat="item in dirCtrl.items">
+        {{ item.name }}
+        <button ng-click="dirCtrl.onRemove({ index: $index })">Don't want this one!</button>
+        <ul>
+          <li>Short Name: {{ item.short_name }}</li>
+          <li>Description: {{ item.description }}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div ng-if="!dirCtrl.isFound()">Nothing found</div>
+</div>
